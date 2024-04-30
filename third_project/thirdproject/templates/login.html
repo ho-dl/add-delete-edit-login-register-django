@@ -13,8 +13,40 @@
 <body style="background-color: rgb(140, 199, 255);">
     
 
+
+
+
+
+
+
+    <div class="container-fluid w-50 text-center mt-3">
+        <div class="row">
+            {% for message in messages %}
+                {% if message.tags == 'error' %}
+                    <div class="alert bg-danger text-white alert-dismissible fade show text-center w-50 mx-auto" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
 		
-    <div class="container-fluid text-center  justify-content-center ">
+    <div class="container-fluid justify-content-center ">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
                 <div class="card w-75 bg-primary text-white m-4">
@@ -34,6 +66,7 @@
                                 <input type="password" class="form-control" placeholder="enter your Password" id="password" name="password">
                             </div>
                             <button type="submit" class="btn bg-white text-black mt-2">Login</button>
+                            <a style="margin-left: 20px; color: white; border-radius: 10px;margin-top:10px; background-color: rgb(247, 248, 225);" href="{% url 'register' %}" class="btn text-grey text-black">Register ?</a>
                         </form>
     
                         </div>
