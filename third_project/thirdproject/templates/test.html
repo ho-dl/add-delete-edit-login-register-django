@@ -1,0 +1,29 @@
+<div class="container mt-5 ">
+    <div class="row">
+        {% for person in people %}
+            <div class="col-md-4 pt-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Product Information
+                    </div>
+                    <div style="background-color: rgb(127, 197, 255);" class="card-body">
+                        <h5 class="card-title">{{ person.name }}</h5>
+                        <p class="card-text">
+                            <strong>Email:</strong> {{ person.place }} <br>
+                            <strong>Phone:</strong> {{ person.age }} <br>
+                           
+                         
+                            <br>
+                        
+
+
+                            <a href="{% url 'person_delete' person.id %}" class="btn btn-success">delete</a>
+                            <a href="{% url 'person_edit' person.id %}" class="btn btn-success">edit</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
